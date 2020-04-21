@@ -8,22 +8,19 @@ msdos cmd window
 sysprep.exe /oobe /reboot /unattend:D:\relocate.xml
 
 
-AMPPS:
+# Ubuntu WebMin Repository
+deb http://download.webmin.com/download/repository sarge contrib
 
-sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
-
-
-if MAPPS does not start:
-
-usr/local/ampps/apache/lib
-
-#sudo mkdir backup
-#sudo mv ./libapr* ./backup/
-
-sudo rm -rf ./libapr*
-sudo apt-get -y install libaprutil1 libaprutil1-dev libapr1 libapr1-dev 
+# app key
+wget http://www.webmin.com/jcameron-key.asc
+sudo apt-key add jcameron-key.asc
+sudo apt update 
 
 
+
+#PORTS IN USE:
+sudo lsof -i -P -n | grep LISTEN 
+sudo lsof -i:80 
 PORTS IN USE:
 sudo lsof -i -P -n | grep LISTEN 
 sudo lsof -i:80 
