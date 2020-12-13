@@ -1,26 +1,21 @@
-Windows 10 Setup 
+Windows 10 Install
 
+Set User Folder to a diferent Drive.
+
+1) During install, when requested to accept the default settings press
 
 CTRL + SHIFT + F3
 
-msdos cmd window
+2) Start a comand line shell
+run cmd
+
+3) Copy relocate.xml to the destination drive (this case is D:, can be any other)
+
+4) Change folder to windows/system32/sysprep and type:
 
 sysprep.exe /oobe /reboot /unattend:D:\relocate.xml
 
+Windows will rebbot and proced with the install, seting your user folder on the selected drive.
+Install all your apps selecting the drive d:
 
-# Ubuntu WebMin Repository
-deb http://download.webmin.com/download/repository sarge contrib
-
-# app key
-wget http://www.webmin.com/jcameron-key.asc
-sudo apt-key add jcameron-key.asc
-sudo apt update 
-
-
-
-#PORTS IN USE:
-sudo lsof -i -P -n | grep LISTEN 
-sudo lsof -i:80 
-PORTS IN USE:
-sudo lsof -i -P -n | grep LISTEN 
-sudo lsof -i:80 
+This will keep the system clean and separated from user data.
